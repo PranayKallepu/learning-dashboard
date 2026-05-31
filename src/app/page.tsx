@@ -1,7 +1,13 @@
+import { Suspense } from "react";
+import DashboardContent from "@/components/dashboard/DashboardContent";
+import DashboardSkeleton from "@/components/dashboard/DashboardSkeleton";
+
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      HOME page
-    </div>
+    <main className="min-h-screen bg-black p-6">
+      <Suspense fallback={<DashboardSkeleton />}>
+        <DashboardContent />
+      </Suspense>
+    </main>
   );
 }
