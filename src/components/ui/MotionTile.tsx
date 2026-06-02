@@ -20,6 +20,12 @@ export default function MotionTile({ children }: MotionTileProps) {
           y: 0,
         },
       }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{
+        once: true,
+        amount: 0.2,
+      }}
       transition={{
         type: "spring",
         stiffness: 300,

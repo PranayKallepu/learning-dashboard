@@ -5,4 +5,8 @@ export const iconMap = {
   Rocket,
   Network,
   FileCode,
+} as const;
+
+export const getCourseIcon = (iconName: string) => {
+  return iconMap[iconName as keyof typeof iconMap];
 };

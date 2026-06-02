@@ -9,7 +9,8 @@ export async function getCourses(): Promise<Course[]> {
     .select("*")
     .order("created_at", {
       ascending: false,
-    });
+    })
+    .returns<Course[]>();
 
   if (error) {
     throw new Error("Failed to fetch courses");

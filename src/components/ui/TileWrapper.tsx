@@ -22,36 +22,9 @@ export default function TileWrapper({
         stiffness: 300,
         damping: 20,
       }}
-      className={`
-        group
-        relative
-        w-full
-        overflow-hidden
-        rounded-3xl
-        border
-        border-zinc-800
-        bg-zinc-900/80
-        backdrop-blur-sm
-        p-6
-        ${className}
-      `}
+      className={`group relative w-full overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/60 backdrop-blur-xl p-6 ${className}`}
     >
-      <div
-        className="
-          absolute
-          inset-0
-          opacity-0
-          transition-opacity
-          duration-300
-          pointer-events-none
-          bg-gradient-to-br
-          from-purple-500/10
-          via-transparent
-          to-cyan-500/10
-          group-hover:opacity-100
-        "
-      />
-
+      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-500/0 via-purple-500/5 to-blue-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       {children}
     </motion.article>
   );

@@ -1,21 +1,24 @@
 import TileWrapper from "../ui/TileWrapper";
 import ProgressBar from "../ui/ProgressBar";
+import MotionTile from "../ui/MotionTile";
+
 import { Course } from "@/types/course";
 import { iconMap } from "@/lib/icons";
-import MotionTile from "../ui/MotionTile";
 
 interface CourseCardProps {
   course: Course;
 }
 
 export default function CourseCard({ course }: CourseCardProps) {
-  const Icon = iconMap[course.icon_name as keyof typeof iconMap];
+  const IconComponent = iconMap[course.icon_name as keyof typeof iconMap];
 
   return (
     <MotionTile>
       <TileWrapper className="min-h-[180px]">
         <div className="flex items-center justify-between">
-          {Icon && <Icon className="h-8 w-8 text-purple-400" />}
+          {IconComponent ? (
+            <IconComponent className="h-8 w-8 text-purple-400" />
+          ) : null}
 
           <span className="text-sm text-zinc-400">{course.progress}%</span>
         </div>

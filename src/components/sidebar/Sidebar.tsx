@@ -2,50 +2,19 @@
 
 import { useState } from "react";
 
-import { Home, BookOpen, BarChart3, Settings } from "lucide-react";
+import { BookOpen } from "lucide-react";
 
 import NavItem from "./NavItem";
-
-const navItems = [
-  {
-    label: "Dashboard",
-    icon: Home,
-  },
-  {
-    label: "Courses",
-    icon: BookOpen,
-  },
-  {
-    label: "Analytics",
-    icon: BarChart3,
-  },
-  {
-    label: "Settings",
-    icon: Settings,
-  },
-];
+import { NAV_ITEMS } from "@/constants/navigation";
+import { NavLabel } from "@/types/navigation";
 
 export default function Sidebar() {
-  const [active, setActive] = useState("Dashboard");
+  const [active, setActive] = useState<NavLabel>("Dashboard");
 
   return (
-    <nav
-      className="
-        hidden
-        md:flex
-        w-64
-        flex-col
-        border-r
-        md:w-20
-        lg:w-64
-        border-zinc-800
-        bg-[#09090b]
-        p-4
-        transition-all
-      "
-    >
+    <nav className="hidden md:flex w-64 flex-col border-r md:w-20 lg:w-64 border-zinc-800 bg-[#09090b] p-4 transition-all">
       <div className="mb-10">
-        <h2 className="hidden lg:block text-xl font-bold">LearnX</h2>
+        <h2 className="hidden lg:block text-xl font-bold">Next-Gen</h2>
         <div className="flex justify-center lg:hidden">
           <BookOpen size={24} />
         </div>
@@ -55,7 +24,7 @@ export default function Sidebar() {
       </div>
 
       <ul className="space-y-2">
-        {navItems.map((item) => (
+        {NAV_ITEMS.map((item) => (
           <NavItem
             key={item.label}
             label={item.label}
